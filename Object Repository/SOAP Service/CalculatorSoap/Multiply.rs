@@ -9,7 +9,7 @@
    <useRalativeImagePath>false</useRalativeImagePath>
    <autoUpdateContent>true</autoUpdateContent>
    <connectionTimeout>-1</connectionTimeout>
-   <followRedirects>true</followRedirects>
+   <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent></httpBodyContent>
    <httpBodyType></httpBodyType>
@@ -39,7 +39,7 @@
    &lt;soapenv:Header/>
    &lt;soapenv:Body>
       &lt;tem:Multiply>
-         &lt;tem:intA>3&lt;/tem:intA>
+         &lt;tem:intA>${num1}&lt;/tem:intA>
          &lt;tem:intB>3&lt;/tem:intB>
       &lt;/tem:Multiply>
    &lt;/soapenv:Body>
@@ -50,6 +50,13 @@
    <soapServiceFunction>Multiply</soapServiceFunction>
    <socketTimeout>-1</socketTimeout>
    <useServiceInfoFromWsdl>false</useServiceInfoFromWsdl>
+   <variables>
+      <defaultValue>'5'</defaultValue>
+      <description></description>
+      <id>6a018266-3cf7-4424-a42e-d6d81863e9f7</id>
+      <masked>false</masked>
+      <name>num1</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
@@ -67,6 +74,7 @@ ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 WS.verifyResponseStatusCode(response, 200)
 
 assertThat(response.getStatusCode()).isEqualTo(200)
-</verificationScript>
+
+WS.verifyElementText(response, 'MultiplyResponse.MultiplyResult', '18')</verificationScript>
    <wsdlAddress>http://www.dneonline.com/calculator.asmx?WSDL</wsdlAddress>
 </WebServiceRequestEntity>

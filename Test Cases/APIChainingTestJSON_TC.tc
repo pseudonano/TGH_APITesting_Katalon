@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>APIChainingTestJSON_TC</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>11cb9604-920b-4fb4-912d-635cbf4fde64</testCaseGuid>
+</TestCaseEntity>
