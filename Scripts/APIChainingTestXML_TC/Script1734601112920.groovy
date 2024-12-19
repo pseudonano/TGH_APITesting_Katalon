@@ -17,7 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-addResponse = WS.sendRequest(findTestObject('SOAP Service/CalculatorSoap/Add'))
+addResponse = WS.sendRequestAndVerify(findTestObject('SOAP Service/CalculatorSoap/Add'))
 
 String xmlBody = addResponse.responseBodyContent
 
